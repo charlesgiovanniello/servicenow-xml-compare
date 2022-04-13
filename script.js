@@ -1,6 +1,7 @@
 const form = document.getElementById('form');
 const baseXML = document.getElementById("baseXML");
 const customXML = document.getElementById("customXML");
+var xpathValue;
 
 //HTML fields to write back to
 const uniqueToBaseText = document.getElementById("uniqueToBase");
@@ -12,7 +13,7 @@ function parseXML(string){
     var parser = new DOMParser();
     var xmlDoc = parser.parseFromString(string, "text/xml");
     var arr = [];
-    var elements = xmlDoc.getElementsByTagName("element");
+    var elements = xmlDoc.getElementsByTagName(xpathValue);
     for(i=0;i<elements.length;i++){
         arr.push(elements[i].childNodes[0].nodeValue);
     }
@@ -42,6 +43,8 @@ function formatString(arr){
 }
 
 function logSubmit(event) {
+    xpathValue = document.getElementById("xpath").value;
+    console.log(xpathValue.value)
     baseFields = parseXML(baseXML.value);
     customFields = parseXML(customXML.value);
 
