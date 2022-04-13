@@ -1,1 +1,0 @@
-# servicenow-xml-compare
