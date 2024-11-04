@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ServiceNow XML Compare Tool</title>
+<link rel="stylesheet" href="styles.css">
+</head>  
+<body> 
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+    <!--FORM FIELDS-->
+    <form id="form" method="get" target="dummyframe">
+        <div style="width:50%;float:left">
+            <label for="baseXML">Base System:</label>
+            <textarea id="baseXML" name="textarea"  rows="20" cols="125"></textarea>
+        </div>
+
+        <div style="width:50%;float:left">
+            <label for="customXML">Customized:</label>
+            <textarea id="customXML" name="textarea"  rows="20" cols="125"></textarea>
+        </div>
+
+        <div style="width:100%;display: inline-flex; padding-top:20px;float:left">
+            <label for="xpath">XPATH Target: </label>
+            <input value="element" id="xpath" name="textarea"  rows="1" cols="20"></input>
+        </div>
+
+        <div style="width:50%;margin-top: 20px; float:left">
+            
+        </div>
+        
+        <div style="width:50%;margin-top: 20px; float:left"></div>
+        <button style="margin-top: 20px;display: block;" type="submit">Submit</button>
+
+    </form>
+    <div style="width:50%;margin-top: 20px; float:left"></div>
+
+    <div style="width:50%;margin-top:-20px;float:left">
+        <button id="clearBtn" onclick="reset()">Clear</button>
+    </div>
+    <div style="width:50%;margin-top: 20px; float:left"></div>
+
+    <!--HTML WRITE BACK SECTION-->
+
+    <p id="uniqueToBase"></p>
+    <p id="uniqueToCustom"></p>
+    <p id="similar"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
